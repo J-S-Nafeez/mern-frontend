@@ -1,0 +1,68 @@
+.profile-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 24px;
+}
+
+.profile-container p {
+  margin: 12px 0;
+}
+
+.profile-container input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.profile-container input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.profile-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #007BFF;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-container button:hover {
+  background-color: #0056b3;
+}
+
+.logout-button {
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: #dc3545;
+}
+
+.logout-button:hover {
+  background-color: #a71d2a;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}

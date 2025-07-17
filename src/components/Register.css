@@ -1,0 +1,72 @@
+/* src/components/Register.css */
+
+.App-Register-Row {
+  width: 100%;
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 30px 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.App-Register-Row h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+.App-Register-Row input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.App-Register-Row input:focus {
+  outline: none;
+  border-color: #28a745;
+}
+
+.App-Register-Row button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.App-Register-Row button:hover {
+  background-color: #218838;
+}
+
+.App-Register-Row a {
+  color: #2a28a7;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.App-Register-Row a:hover {
+  text-decoration: underline;
+}
+
+.App-Register-Row hr {
+  margin: 20px 0;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 14px;
+}

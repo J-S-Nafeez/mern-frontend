@@ -1,0 +1,156 @@
+/* Overall Cart Container */
+.cart-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Heading */
+.cart-container h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #212121;
+}
+
+/* Error Message */
+.cart-error {
+  color: #d32f2f;
+  background: #fff0f0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Cart Items List */
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each Cart Item */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Product Name & Price */
+.item-details {
+  flex: 3;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Quantity Controls */
+.item-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Buttons */
+.item-qty button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.item-qty button:hover {
+  background: #0d47a1;
+  transform: scale(1.1);
+}
+
+/* Total Price per Item */
+.item-total {
+  flex: 1;
+  text-align: right;
+  font-weight: 600;
+  color: #ff5722;
+}
+
+/* Order Value */
+.order-value {
+  text-align: right;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #212121;
+}
+
+/* Place Order & Login Buttons */
+.cart-container button.place-order,
+.cart-container button.login {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.place-order {
+  background: linear-gradient(90deg, #ff5722, #ff9800);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
+
+button.place-order:hover {
+  background: linear-gradient(90deg, #e64a19, #f57c00);
+  transform: translateY(-2px);
+}
+
+button.login {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+button.login:hover {
+  background: #0d47a1;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .item-total {
+    text-align: left;
+  }
+
+  .order-value {
+    text-align: left;
+  }
+}
