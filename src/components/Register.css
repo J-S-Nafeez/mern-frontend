@@ -1,72 +1,236 @@
-/* src/components/Register.css */
+/* General Variables (Maintain consistency with other components if applicable) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); /* Modern Sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap'); /* Elegant Serif for headings */
 
-.App-Register-Row {
-  width: 100%;
-  max-width: 450px;
-  margin: 80px auto;
-  padding: 30px 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
+
+/* Container */
+.register-container {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+    width: 100%;
+    margin-left: 350px;
+    max-width: 450px; /* Slightly wider for a more spacious feel */
+    padding: 45px 40px;
+    margin-top: 90px;
+    background: var(--bg-white); /* Solid white background for clarity */
+    border-radius: 12px; /* Softer rounded corners */
+    box-shadow: 0 10px 30px var(--shadow-medium); /* More prominent, refined shadow */
+    border: 1px solid var(--border-soft); /* Subtle border */
+    text-align: center; /* Center content */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+    /* position: relative; */
+    /* overflow: hidden; */
 }
 
-.App-Register-Row h2 {
-  margin-bottom: 25px;
-  font-size: 28px;
-  color: #333;
+.register-container:hover {
+    transform: translateY(-5px); /* Gentle lift on hover */
+    box-shadow: 0 15px 40px var(--shadow-medium); /* Enhanced shadow on hover */
 }
 
-.App-Register-Row input {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border 0.3s ease;
+/* Heading */
+.register-container h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font for heading */
+    color: var(--primary-blue);
+    margin-bottom: 35px; /* More space below heading */
+    font-size: 2.6em; /* Larger, more impactful heading */
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    position: relative;
+    padding-bottom: 15px; /* Space for underline */
 }
 
-.App-Register-Row input:focus {
-  outline: none;
-  border-color: #28a745;
+.register-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; /* Accent line length */
+    height: 4px; /* Accent line thickness */
+    background-color: var(--accent-teal); /* Vibrant accent color */
+    border-radius: 2px;
 }
 
-.App-Register-Row button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.App-Register-Row button:hover {
-  background-color: #218838;
-}
-
-.App-Register-Row a {
-  color: #2a28a7;
-  text-decoration: none;
-  display: block;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.App-Register-Row a:hover {
-  text-decoration: underline;
-}
-
-.App-Register-Row hr {
-  margin: 20px 0;
-}
-
+/* Error Message */
 .error-message {
-  color: red;
-  margin-bottom: 10px;
-  font-size: 14px;
+    background-color: rgba(220, 53, 69, 0.1); /* Light tint of danger red */
+    color: var(--error-red);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    padding: 12px 20px;
+    border-radius: 8px; /* Softer corners */
+    margin-bottom: 25px; /* More space below error */
+    font-size: 0.9em;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-out forwards; /* Simple fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form */
+.register-container form { /* Select form within container */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels (if you add them back to your JSX, otherwise they won't apply) */
+.register-container form label {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--text-dark); /* Darker text for readability */
+    text-align: left; /* Align labels to the left */
+}
+
+/* Inputs */
+.register-container form input {
+    width: calc(100% - 32px); /* Account for padding */
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-soft); /* Subtle border */
+    border-radius: 8px; /* Consistent rounded corners */
+    background-color: #fcfcfc; /* Very light background for inputs */
+    color: var(--text-dark);
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+.register-container form input::placeholder {
+    color: var(--text-muted); /* Muted placeholder color */
+    opacity: 0.8;
+}
+
+.register-container form input:focus {
+    background-color: var(--bg-white); /* White background on focus */
+    outline: none;
+    border-color: var(--primary-blue); /* Primary blue border on focus */
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Outer glow for focus */
+}
+
+/* Button */
+.register-container form button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, var(--button-gradient-start), var(--button-gradient-end)); /* Gradient for button */
+    color: var(--text-light); /* White text */
+    border: none;
+    border-radius: 8px; /* Consistent rounded corners */
+    font-size: 1.1em; /* Slightly larger text */
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Button shadow */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Subtle glow effect on button hover (matching Products.css) */
+.register-container form button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 0;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(45deg);
+    transition: all 0.4s ease;
+    opacity: 0;
+    z-index: 0;
+}
+
+.register-container form button:hover {
+    transform: translateY(-3px); /* More pronounced lift on hover */
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3); /* Stronger shadow on hover */
+    background: linear-gradient(90deg, #3A7DE1, #2C69D0); /* Darker gradient on hover */
+}
+
+.register-container form button:hover::before {
+    width: 150%;
+    opacity: 1;
+}
+
+/* Login Link */
+.register-container .login-link {
+    text-align: center;
+    margin-top: 25px; /* More space above link */
+    font-size: 0.95em;
+    color: var(--text-muted); /* Muted gray for surrounding text */
+}
+
+.register-container .login-link a {
+    color: var(--primary-blue); /* Primary blue for the link */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.register-container .login-link a:hover {
+    color: var(--accent-teal); /* Accent color on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .register-container {
+        margin: 20px;
+        padding: 35px 30px;
+        border-radius: 10px;
+    }
+
+    .register-container h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .register-container h2::after {
+        width: 50px;
+        height: 3px;
+    }
+
+    .error-message {
+        padding: 10px 15px;
+        margin-bottom: 20px;
+    }
+
+    .register-container form input {
+        padding: 12px 14px;
+        font-size: 0.95em;
+        border-radius: 6px;
+    }
+
+    .register-container form button {
+        padding: 12px;
+        font-size: 1em;
+        border-radius: 6px;
+    }
+
+    .register-container .login-link {
+        margin-top: 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 400px) {
+    .register-container {
+        padding: 30px 25px;
+        margin: 15px;
+    }
+    .register-container h2 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+    .register-container form input {
+        font-size: 0.9em;
+    }
+    .register-container form button {
+        font-size: 0.95em;
+    }
 }

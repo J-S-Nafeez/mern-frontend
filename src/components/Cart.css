@@ -1,156 +1,115 @@
-/* Overall Cart Container */
 .cart-container {
   max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  background: #ffffff;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Heading */
-.cart-container h2 {
-  font-size: 32px;
+.cart-title {
   text-align: center;
-  margin-bottom: 30px;
-  color: #212121;
-}
-
-/* Error Message */
-.cart-error {
-  color: #d32f2f;
-  background: #fff0f0;
-  padding: 12px 20px;
-  border-radius: 8px;
+  font-size: 28px;
   margin-bottom: 20px;
-  font-size: 15px;
-  text-align: center;
+  color: #333;
 }
 
-/* Cart Items List */
-.cart-items {
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.cart-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Each Cart Item */
 .cart-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: #f9f9f9;
   padding: 15px 20px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 .cart-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
+  background: #f1f1f1;
 }
 
-/* Product Name & Price */
-.item-details {
-  flex: 3;
+.item-name {
+  flex: 2;
   font-size: 18px;
-  color: #333;
+  color: #555;
 }
 
-/* Quantity Controls */
-.item-qty {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Buttons */
-.item-qty button {
-  width: 34px;
-  height: 34px;
-  border: none;
-  background: #1976d2;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.item-qty button:hover {
-  background: #0d47a1;
-  transform: scale(1.1);
-}
-
-/* Total Price per Item */
-.item-total {
+.item-price, .item-total {
   flex: 1;
-  text-align: right;
-  font-weight: 600;
-  color: #ff5722;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
 }
 
-/* Order Value */
+.qty-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  margin: 0 5px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.qty-btn:hover {
+  background: #0056b3;
+}
+
+.item-qty {
+  font-size: 16px;
+  padding: 0 8px;
+}
+
 .order-value {
   text-align: right;
-  margin-top: 25px;
   font-size: 20px;
-  font-weight: 700;
-  color: #212121;
-}
-
-/* Place Order & Login Buttons */
-.cart-container button.place-order,
-.cart-container button.login {
-  width: 100%;
-  padding: 15px;
   margin-top: 20px;
+  color: #222;
+  font-weight: bold;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.place-order-btn, .login-order-btn {
+  background: #28a745;
+  color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 600;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-button.place-order {
-  background: linear-gradient(90deg, #ff5722, #ff9800);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+.login-order-btn {
+  background: #ffc107;
+  color: #222;
 }
 
-button.place-order:hover {
-  background: linear-gradient(90deg, #e64a19, #f57c00);
-  transform: translateY(-2px);
+.place-order-btn:hover {
+  background: #218838;
 }
 
-button.login {
-  background: #1976d2;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
-}
-
-button.login:hover {
-  background: #0d47a1;
-  transform: translateY(-2px);
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .item-total {
-    text-align: left;
-  }
-
-  .order-value {
-    text-align: left;
-  }
+.login-order-btn:hover {
+  background: #e0a800;
 }
